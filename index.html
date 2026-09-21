@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luna Sunico — Portfolio</title>
+<link rel="stylesheet" href="ooof.css">
+</head>
+
+<body>
+
+<div class="shell">
+  <nav class="rail" aria-label="Section index">
+    <span class="rail-mark">PORTFOLIO / 2025</span>
+    <div class="rail-dots">
+      <button data-target="hero" class="active" aria-label="Go to Intro"></button>
+      <button data-target="about" aria-label="Go to About"></button>
+      <button data-target="projects" aria-label="Go to Projects"></button>
+      <button data-target="contact" aria-label="Go to Contact"></button>
+    </div>
+    <span class="rail-foot">AVIOR</span>
+  </nav>
+
+  <div class="snap" id="snap">
+
+    <section id="hero">
+      <div class="wrap">
+        <div>
+          <p class="hero-eyebrow"><span class="dot"></span>Trying new things</p>
+          <h1 class="name">Luna Sunico<br><em>googles things professionally.</em></h1>
+          <p class="hero-desc">My code works. Please don't ask me why</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">What can i do</a>
+            <a class="btn btn-ghost" href="#contact">Contact</a>
+          </div>
+        </div>
+        <div class="terminal" aria-hidden="true">
+          <div class="terminal-bar"><span></span><span></span><span></span></div>
+          <div class="terminal-body">
+            <div><span class="prompt">Luna@dev</span><span class="muted"> ~ </span><span class="type-line"> who am i</span><span class="caret"></span></div>
+            <br>
+            <div class="out">role: <span style="color:var(--accent)">Full-Stack Developer</span></div>
+            <div class="out">stack: php - laravel, python - django, javascript - node.js</div>
+            <div class="out">focus: making money</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div>
+          <p class="label">01 / About</p>
+        </div>
+        <div>
+          <div class="about-copy">
+            <p>I specialize in turning caffeine and Stack Overflow answers into functional software, mostly by hitting save until all the red squiggly lines disappear.</p>
+            <p>Off the clock, I spend my time rewriting my personal portfolio for the fifth time and turning ideas into solutions.</p>
+            <p>All kidding aside, here are my core skills</p>
+          </div>
+          <div class="skills">
+            <span class="skill">Laravel</span>
+            <span class="skill">PHP</span>
+            <span class="skill">Django</span>
+            <span class="skill">Node.js</span>
+            <span class="skill">Python</span>
+            <span class="skill">API</span>
+            <span class="skill">MySQL</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <p class="label">02 / Projects</p>
+        <div class="project-list">
+          <a class="project" href="https://www.technology1.com/digital-transformation/education" target="_blank" rel="noopener">
+            <span class="project-path">~/proj/01</span>
+            <div>
+              <h3 class="project-title">Software Engineer</h3>
+              <p class="project-summary">I develop and maintain the core backend architecture for our cloud-hosted enterprise SaaS ERP solutions.</p>
+              <div class="project-tags"><span>C#</span><span>Go</span><span>Terraform</span><span>Python</span></div>
+            </div>
+            <span class="project-link">View →</span>
+          </a>
+          <a class="project" href="https://dxc.com/" target="_blank" rel="noopener">
+            <span class="project-path">~/proj/02</span>
+            <div>
+              <h3 class="project-title">IT Specialist</h3>
+              <p class="project-summary">Manages hybrid, public, and private cloud environments, data architectures, and workplace technology solutions.</p>
+              <div class="project-tags"><span>YAML</span><span>Pyspark</span><span>Powershell</span></div>
+            </div>
+            <span class="project-link">View →</span>
+          </a>
+          <a class="project" href="https://www.taskus.com/services/agentic-ai/" target="_blank" rel="noopener">
+            <span class="project-path">~/proj/03</span>
+            <div>
+              <h3 class="project-title">AI tech</h3>
+              <p class="project-summary">Offers data labeling, annotation, and data validation to help companies build and refine artificial intelligence and autonomous systems.</p>
+              <div class="project-tags"><span>Pydantic</span><span>TypeScript</span><span>HTML</span></div>
+            </div>
+            <span class="project-link">View →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <p class="label">03 / Contact</p>
+        <h2 class="contact-head">Thank you for visiting my portfolio! I'm configured for 99.9% uptime whenever you are ready to connect.</h2>
+        <div class="contact-links">
+          <a href="mailto:aviorcy@gmail.com">aviorcy@gmail.com</a>
+          <a href="https://github.com/aviorcy-design">GitHub</a>
+          <a href="https://www.facebook.com/luna.aviory">Facebook</a>
+          <a href="film.html">Resume</a>
+        </div>
+        <footer>© 2025 Luna Sunico. Built by hand.</footer>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script>
+  // Sync the rail dots with whichever section is currently snapped into view,
+  // and let clicking a dot scroll to that section.
+  const snapEl = document.getElementById('snap');
+  const sections = [...document.querySelectorAll('section')];
+  const dots = [...document.querySelectorAll('.rail-dots button')];
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const target = document.getElementById(dot.dataset.target);
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          dots.forEach(d => d.classList.toggle('active', d.dataset.target === id));
+        }
+      });
+    }, { root: snapEl, threshold: 0.6 });
+    sections.forEach(s => io.observe(s));
+  }
+</script>
+
+</body>
+</html>

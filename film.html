@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luna Sunico — Résumé</title>
+    <link rel="stylesheet" href="film.css">
+
+</head>
+<body>
+  <div class="container">
+    <div class="background"></div>
+    <div class="overlay"></div>
+  </div>
+<div class="page">
+
+  <aside class="sidebar">
+    <div class="avatar" tabindex="0">
+      <div class="flip-inner">
+        <div class="flip-face flip-front">
+          <img src="Resumeformal.jpg" alt="Luna Sunico">
+        </div>
+        <div class="flip-face flip-back">
+          <img src="ChibiResume.png" alt="Luna Sunico">
+        </div>
+      </div>
+    </div>
+
+    <h1 class="side-name">Luna Sunico</h1>
+    <p class="side-role">Full-Stack Developer</p>
+
+   <div class="side-block">
+      <p class="side-label">CONTACT</p>
+      <ul class="contact-list">
+        <li><a href="mailto:aviorcy@gmail.com">aviorcy@gmail.com</a></li>
+        <li><a href="tel:+639099749052">09099749052</a></li>
+        <li><a href="https://linkedin.com/in/luna-sunico0531" target="_blank">linkedin.com/in/luna-sunico0531</a></li>
+        <li><a href="https://www.facebook.com/luna.aviory" target="_blank">facebook.com/luna.aviory</a></li>
+        <li>Cavite, PH</li>
+      </ul>
+    </div>
+
+     <div class="side-1block">
+      <p class="side-label">WEB DEVELOPMENT</p>
+      <div class="skill-list">
+        <span>html</span>
+        <span>css</span>
+        <span>javascript</span>
+        <span>react</span>
+        <span>php</span>
+        <span>angular</span>
+      </div>
+
+
+    <div class="side-2block">
+      <p class="side-label">DATABASE MANAGEMENT</p>
+      <div class="skill-list">
+        <span>postgreSQL</span>
+        <span>mySQL</span>
+        <span>sqlite</span>
+      </div>
+
+
+       <div class="side-3block">
+      <p class="side-label">BACK-END DEVELOPMENT</p>
+      <div class="skill-list">
+        <span>laravel</span>
+        <span>python</span>
+        <span>node.js</span>
+        <span>django</span>
+        <span>websecurity</span>
+        <span>api</span>
+        <span>ruby</span>
+      </div>
+
+
+    <div class="side-block">
+      <p class="side-label">LANGUAGES</p>
+      <ul class="lang-list">
+        <li>English <em>Basic</em></li>
+        <li>Tagalog <em>Native</em></li>
+      </ul>
+    </div>
+
+    <a class="downloadBtn" href="whatisgoingonresume.pdf" download="Luna_Sunico_Resume.pdf"> Download PDF</a>
+   <a class="downloadBtn" href="index.html" target="_blank" rel="noopener noreferrer"> View Portfolio</a>
+  </aside>
+  
+  <main class="main">
+    <p class="intro-line">Résumé / 2025</p>
+    <p class="summary"> Leveraged  <em>3 years</em> of full-stack development experience to design, build, and optimize data processing pipelines, enabling real-time analytics and reporting.</p>
+
+    <section class="timeline">
+      <p class="section-title">EXPERIENCE</p>
+
+      <div class="entry reveal">
+        <div class="entry-date">2025 — Now</div>
+        <div>
+          <h3 class="entry-role">Software Engineer</h3>
+          <p class="entry-org">TechnologyOne</p>
+          <ul>
+            <li>I develop and maintain the core backend architecture for our cloud-hosted enterprise SaaS ERP solutions.</li>
+            <li>I write the code that enables local councils and universities to securely manage their critical financial, HR, and student data.</li>
+            <li>I also collaborate on integrating our Plus AI engine so our users can instantly run reports and surface business insights using natural language.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry reveal">
+        <div class="entry-date">2023 — 2024</div>
+        <div>
+          <h3 class="entry-role">IT Specialist</h3>
+          <p class="entry-org"> DXC Technology</p>
+          <ul>
+            <li>Manages hybrid, public, and private cloud environments, data architectures, and workplace technology solutions.</li>
+            <li>Secures critical enterprise networks, applications, and digital infrastructures.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry reveal">
+        <div class="entry-date">2023</div>
+        <div>
+          <h3 class="entry-role">AI tech</h3>
+          <p class="entry-org">TaskUs</p>
+          <ul>
+            <li>Offers data labeling, annotation, and data validation to help companies build and refine artificial intelligence and autonomous systems.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="timeline">
+      <p class="section-title">EDUCATION</p>
+
+      <div class="edu-entry reveal">
+        <div class="entry-date">2023— 2026</div>
+        <div>
+          <h3 class="edu-degree">B.S. in Information Technology</h3>
+          <p class="edu-school">AMA Computer College - Fairview Campus</p>
+        </div>
+      </div>  
+    </section>
+
+
+    <footer>© 2025 Luna Sunico</footer>
+  </main>
+
+  <script>
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('in-view'), i * 60);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in-view'));
+  }
+</script>
+
+</body>
+</html>
